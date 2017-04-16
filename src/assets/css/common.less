@@ -1,0 +1,123 @@
+//公共样式文件，所以class或id命名必须以c-为前缀开头
+.pop-under {
+    position: fixed;
+    width: 100%;
+}
+
+.down-arrow,
+.up-arrow,
+.right-arrow {
+    padding-right: 0.12rem;
+    position: relative;
+}
+.test-css-loaders{
+  color:red;
+}
+.down-arrow:after,
+.up-arrow:after,
+.right-arrow:after {
+    content: "";
+    //border-left: 0.02rem solid #4a7977;
+    border-left: 0.02rem solid #bec8ca;
+    //border-top: 0.02rem solid #4a7977;
+    border-top: 0.02rem solid #bec8ca;
+    -webkit-transform: translateY(-50%) rotate(-135deg);
+    //为了更准确的居中,添加translateY(-50%),即上移自身的50%。注意必须现在rotate前面,否则坐标系被旋转后再平移达不到想要的效果
+    display: inline-block;
+    height: 0.12rem;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 0.12rem;
+}
+
+.up-arrow:after {
+    -webkit-transform: translateY(-50%) rotate(45deg);
+}
+
+.right-arrow:after {
+    -webkit-transform: translateY(-50%) rotate(135deg);
+}
+
+#app {
+    // padding-top: 0.9rem;
+}
+
+.one-px-top{
+  position: relative;
+  &:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top:0;
+    height: 1px;
+    width: 100%;
+    background-color: #e6e6e8;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 1;
+  }
+}
+.one-px-bottom{
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom:0;
+    height: 1px;
+    width: 100%;
+    background-color: #e6e6e8;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 1;
+  }
+}
+.one-px-right{
+  position: relative;
+  &:after{
+    position: absolute;
+    content: '';
+    right: 0;
+    top:0;
+    width: 1px;
+    height: 100%;
+    background-color: #e6e6e8;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    z-index: 1;
+  }
+}
+.one-px-left{
+  position: relative;
+  &:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top:0;
+    width: 1px;
+    height: 100%;
+    background-color: #e6e6e8;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    z-index: 1;
+  }
+}
+.one-px-button{
+  position: relative;
+  &:after{
+    content: " ";
+    width: 200%;
+    height: 200%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+  }
+}
