@@ -1,24 +1,24 @@
 <!-- <comp-top :title="title" :page="page"></comp-top> -->
 <div class="index">
-    <div id="carousel" class="swipe">
-        <div class="wrap">
-            <div class="cont" @click="goIntro(2)"><div class="img-1"></div></div>
-            <div class="cont" @click="goIntro(1)"><div class="img-2"></div></div>
-        </div>
-        <div class="dot">
-            <span class="active"></span><span></span>
-        </div>
+    <div class="ind-wrap">
+        <ul>
+            <li v-for="item in images" v-bind:style="{backgroundImage: 'url(' +item.bg + ')'}"  track-by="$index" class="ind-img"> 
+                <!-- <img v-bind:src='item.bg' alt=""> -->
+            </li>
+        </ul>
+        <!-- <img src="../../assets/image/hunter.png" alt="" /> -->
+        <!-- <div :style="{backgroundImage: 'url(' +bg + ')'}" > -->
     </div>
     <div class="book" v-link="{path:'/mybusiness'}">
-        <div>机酒预订<span class="arrow"></span></div>
+        <div>{{title}}</div>
     </div>
-    <div class="apply" style="display: none">
+<!--     <div class="apply" style="display: none">
         <div>差旅申请 <span class="arrow"></span></div>
-    </div>
-    <div class="foot">
+    </div> -->
+<!--     <div class="foot">
         <div class="tel">
             <span>客服电话</span>
             <a class="numer" href="tel:010-8273651">010-8273651</a>
         </div>
-    </div>
+    </div> -->
 </div>
