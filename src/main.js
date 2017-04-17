@@ -11,7 +11,7 @@ import VueRouter from 'vue-router';
 import vueResource from 'vue-resource';
 // import page
 import Home from './views/index/index.js';
-
+import Begin from './views/begin/begin.js';
 
 FastClick.attach(document.body);
 libDom($);
@@ -27,16 +27,16 @@ router.map({
     '/home': {
         name: 'home',
         component: Home
+    },
+    '/begin': {
+        name: 'begin',
+        component: Begin
     }
-    // '/handbook': {
-    //     name: 'handbook',
-    //     component: HandBook
-    // }
 });
 
-// map中不匹配的路由规则都跳转到index
+// map中不匹配的路由规则都跳转到begin
 router.redirect({
-    '*': '/home'
+    '*': '/begin'
 });
 
 router.start(App, '#app'); 
